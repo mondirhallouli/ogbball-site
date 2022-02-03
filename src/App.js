@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/header/Header"
+import MobileMenu from "./components/header/MobileMenu"
+import './styles/general.css'
+import { useState } from "react"
+import Cart from "./components/header/Cart"
 
-function App() {
+const App = () => {
+
+  const [open, setOpen] = useState(false);
+  const [cartOpen, setCartOpen] = useState(false);
+
+  const toggleMenu = () => setOpen(!open);
+  const toggleCart = () => setCartOpen(!cartOpen);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header open={open} toggleMenu={toggleMenu} toggleCart={toggleCart} />
+      <MobileMenu open={open} />
+      <Cart cartOpen={cartOpen} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
