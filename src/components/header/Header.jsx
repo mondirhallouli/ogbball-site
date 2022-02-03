@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import Nav from "./Nav"
 import Container from "../Container"
 import { HeaderTitle, HeaderSubtitle } from '../Typography'
-import { HeaderCtaWrapper } from '../Utility'
+import { HeaderCtaWrapper } from '../Layout'
 import { CtaBtn } from '../Buttons'
 import headerBgImgDt from "../../assets/header-bg-desktop.svg"
 import headerBgImgTb from "../../assets/header-bg-tablet.svg"

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import cartItemImg from '../../assets/images/folded-hoodie-square.png'
+import cartItemImg from '../../assets/images/black-hoodie.png'
 
 const CartBox = styled.div`
   width: 50vw;

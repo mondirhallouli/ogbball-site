@@ -14,3 +14,15 @@ export const CtaBtn = styled.button`
     opacity: 0.8;
   }
 `;
+
+export const ShopCardBtn = styled.button`
+  width: 11.25rem;
+  margin: 0 auto;
+  padding: 1.125rem 0;
+  background: var(--wheat);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--white);
+`;

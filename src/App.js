@@ -3,6 +3,7 @@ import MobileMenu from "./components/header/MobileMenu"
 import './styles/general.css'
 import { useState } from "react"
 import Cart from "./components/header/Cart"
+import Shop from "./components/shop/Shop"
 
 const App = () => {
 
@@ -17,6 +18,7 @@ const App = () => {
       <Header open={open} toggleMenu={toggleMenu} toggleCart={toggleCart} />
       <MobileMenu open={open} />
       <Cart cartOpen={cartOpen} />
+      <Shop />
     </div>
   )
 }

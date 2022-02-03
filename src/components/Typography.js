@@ -1,6 +1,22 @@
 import styled from 'styled-components'
 
-const HeaderTitle = styled.h1`
+export const SectionTitle = styled.h2`
+  margin-bottom: 1.875rem;
+  font-family: var(--heading-f);
+  font-weight: 700;
+  font-size: 1.625rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--green-block);
+
+  @media (min-width: 48rem) {
+    font-size: 2rem;
+    margin-bottom: 3.75rem;
+  }
+`;
+
+// HEADER SECTION TEXT COMPONENTS
+export const HeaderTitle = styled.h1`
   max-width: 48.0625rem;
   margin: 0 auto 1.5rem;
   font-family: var(--heading-f);
@@ -13,7 +29,7 @@ const HeaderTitle = styled.h1`
   @media (max-width: 23.4375rem) {width: 100%; font-size: 2.25rem;}
 `;
 
-const HeaderSubtitle = styled.p`
+export const HeaderSubtitle = styled.p`
   max-width: 25.25rem;
   margin: 0 auto 2.75rem;
   font-family: var(--copy-f);
@@ -26,4 +42,31 @@ const HeaderSubtitle = styled.p`
   @media (max-width: 23.4375rem) { width: 100%; margin-bottom: 1.5rem;}
 `;
 
-export { HeaderTitle, HeaderSubtitle }
+// SHOP SECTION TEXT COMPONENTS
+export const ShopCardTitle = styled.h3`
+  font-family: var(--heading-f);
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-align: center;
+  color: var(--green-black);
+  margin-bottom: 1rem;
+
+  @media (min-width: 48rem){
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+`;
+
+export const ShopCardPrice = styled.h3`
+  font-family: var(--heading-f);
+  font-weight: 700;
+  font-size: 1.75rem;
+  text-align: center;
+  color: var(--purple);
+  margin-bottom: 1.25rem;
+
+  @media (min-width: 48rem) {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+`;
