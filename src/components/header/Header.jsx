@@ -12,8 +12,8 @@ const HeaderWrapper = styled.header`
   padding: 1rem 2.25rem 14.875rem;
   margin: 0 auto 6.25rem;
   background-image: url(${headerBgImgDt});
-  background-position: top left;
-  background-size: 100%;
+  background-position: top center;
+  background-size: cover;
   background-repeat: no-repeat;
   position: relative;
   z-index: 1;

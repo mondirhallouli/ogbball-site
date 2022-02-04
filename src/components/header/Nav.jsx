@@ -5,25 +5,25 @@ import whiteCart from '../../assets/shopping-cart-white.svg'
 import styled from 'styled-components'
 import MenuBtn from './MenuBtn'
 import MenuBtnWrapper from './MenuBtnWrapper'
+import rem from '../Utils'
 
 const Navbar = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto 9.375rem;
-  padding: 0.75rem;
-  background-color: white;
-  box-shadow: 0px 10px 27px -2px rgba(0,0,0,0.1),
-   0px -10px 27px -2px rgba(0,0,0,0.1) ;
-
-  @media (max-width: 48rem) {
-    padding: 0;
-    background-color: transparent;
-    box-shadow: none;
+  margin: 0 auto ${rem(74)};
+  padding: 0;
+  
+  @media (min-width: ${rem(769)}) {
+    margin-bottom: ${rem(145)};
   }
 
-  @media (max-width: 23.4375rem) {
-    margin-bottom: 4.65625rem;
+  @media (min-width: ${rem(769)}) {
+    padding: ${rem(12)};
+    background-color: white;
+    box-shadow: 0px 10px 27px -2px rgba(0,0,0,0.1),
+                0px -10px 27px -2px rgba(0,0,0,0.1) ;
+    margin-bottom: ${rem(170)}
   }
 `;
 
