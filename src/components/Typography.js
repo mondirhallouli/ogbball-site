@@ -93,3 +93,8 @@ export const NLdesc = styled.p`
   color: var(--purple);
   margin-bottom: ${rem(16)};
 `;
+
+// FOOTER SECTION TEXT COMPONENT
+export const Copyright = styled.p`
+  color: var(--white);
+`;

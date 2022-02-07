@@ -233,3 +233,17 @@ export const NLBtn = styled.button`
     font-size: ${rem(18)};
   }
 `;
+
+// FOOTER SECTION COMPONENTS
+export const FooterFlex = styled.div`
+  max-width: ${rem(940)};
+
+  @media (min-width: ${rem(376)}) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: ${rem(40)};
+    column-gap: ${rem(78)};
+  }
+`;

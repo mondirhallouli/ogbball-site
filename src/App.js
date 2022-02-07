@@ -8,6 +8,7 @@ import Coaching from "./components/coaching/Coaching"
 import Youtube from './components/youtube/Youtube'
 import Contact from './components/contact/Contact'
 import Newsletter from './components/newsletter/Newsletter'
+import Footer from './components/footer/Footer'
 
 const App = () => {
 
@@ -27,6 +28,7 @@ const App = () => {
       <Youtube />
       <Contact />
       <Newsletter />
+      <Footer />
     </div>
   )
 }
