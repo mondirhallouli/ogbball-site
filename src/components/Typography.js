@@ -85,3 +85,11 @@ export const CoachingDesc = styled.p`
     margin: 0 0;
   } 
 `;
+
+// NEWSLETTER SECTION TEXT COMPONENTS
+export const NLdesc = styled.p`
+  font-size: ${rem(16)};
+  text-align: center;
+  color: var(--purple);
+  margin-bottom: ${rem(16)};
+`;

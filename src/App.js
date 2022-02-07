@@ -7,6 +7,7 @@ import Shop from "./components/shop/Shop"
 import Coaching from "./components/coaching/Coaching"
 import Youtube from './components/youtube/Youtube'
 import Contact from './components/contact/Contact'
+import Newsletter from './components/newsletter/Newsletter'
 
 const App = () => {
 
@@ -25,6 +26,7 @@ const App = () => {
       <Coaching />
       <Youtube />
       <Contact />
+      <Newsletter />
     </div>
   )
 }
