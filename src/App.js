@@ -6,6 +6,7 @@ import Cart from "./components/header/Cart"
 import Shop from "./components/shop/Shop"
 import Coaching from "./components/coaching/Coaching"
 import Youtube from './components/youtube/Youtube'
+import Contact from './components/contact/Contact'
 
 const App = () => {
 
@@ -23,6 +24,7 @@ const App = () => {
       <Shop />
       <Coaching />
       <Youtube />
+      <Contact />
     </div>
   )
 }
