@@ -1,5 +1,4 @@
-import Container from "../Container";
-import { ContactFlex, ContactForm, ContactLeft, ContactRight, Input, SubmitBtn } from "../Layout";
+import { Container, ContactFlex, ContactForm, ContactLeft, ContactRight, Input, SubmitBtn } from "../Layout";
 import { SectionTitle } from "../Typography";
 
 

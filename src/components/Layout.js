@@ -1,45 +1,47 @@
 import styled from "styled-components";
 import rem from "./Utils";
 
+export const Container = styled.div`
+  max-width: ${rem(940)};
+  margin: 0 auto;
+`;
+
 export const HeaderCtaWrapper = styled.div`
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  column-gap: 1.25rem;
-  row-gap: 1rem;
-
-  @media (max-width: 23.4375rem){
-    flex-direction: column;
-  }
+  column-gap: ${rem(20)};
+  row-gap: ${rem(16)};
 `;
 
 // SHOP SECTION COMPONENTS
 export const ShopWrapper = styled.div`
-  margin-bottom: 6.25rem;
+  margin-bottom: ${rem(100)};
 `;
 
 export const ShopItemWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(18.75rem, 23.75rem));
+  grid-template-columns: repeat(auto-fill, minmax(${rem(300)}, ${rem(380)}));
   justify-content: center;
   justify-items: center;
-  row-gap: 3.125rem;
+  row-gap: ${rem(50)};
 
-  @media (min-width: 48.0625rem) {
-    column-gap: 6.25rem;
-    row-gap: 4rem;
+  @media (min-width: ${rem(769)}) {
+    column-gap: ${rem(100)};
+    row-gap: ${rem(64)};
   }
 `;
 
 export const ShopItemCard = styled.div`
-  width: 18.75rem;
+  width: ${rem(300)};
   height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  @media (min-width: 48.0625rem) {
-    width: 23.75rem;
+  @media (min-width: ${rem(769)}) {
+    width: ${rem(380)};
   }
 `;
 
@@ -47,7 +49,7 @@ export const ShopItemImg = styled.img`
   display: block;
   width: 100%;
   height: auto;
-  margin-bottom: 1.875rem;
+  margin-bottom: ${rem(30)};
 `;
 
 // COACHING SECTION COMPONENTS
@@ -59,7 +61,7 @@ export const CoachingSection = styled.div`
 export const CoachingContent = styled.div`
   text-align: center;
 
-  @media (min-width: 48.0625rem) {
+  @media (min-width: ${rem(769)}) {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -237,13 +239,15 @@ export const NLBtn = styled.button`
 // FOOTER SECTION COMPONENTS
 export const FooterFlex = styled.div`
   max-width: ${rem(940)};
+  margin: 0 auto;
 
   @media (min-width: ${rem(376)}) {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 3fr 1fr 2fr;
+    gap: ${rem(40)} ${rem(88)};
+    justify-content: center;
+    justify-items: center;
     align-items: center;
-    row-gap: ${rem(40)};
-    column-gap: ${rem(78)};
   }
+  
 `;

@@ -1,5 +1,4 @@
 import { CoachingCta } from '../Buttons';
-import Container from '../Container';
 import { CoachingSection, CoachingContent } from '../Layout';
 import { CoachingDesc, SectionTitle } from '../Typography';
 

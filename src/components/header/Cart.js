@@ -1,30 +1,30 @@
 import styled from 'styled-components'
 import cartItemImg from '../../assets/images/black-hoodie.png'
+import rem from '../Utils'
 
 const CartBox = styled.div`
   width: 50vw;
   height: 100vh;
-  padding: 2rem;
+  padding: ${rem(32)};
   background-color: white;
   position: fixed;
   top: 0;
   left: ${(props) => props.cartOpen ? '0%' : '-100%'};
-  box-shadow: 10px 0px 27px -2px rgba(0,0,0,0.1);
+  box-shadow: ${rem(10)} 0px ${rem(27)} -2px rgba(0,0,0,0.1);
   z-index: 99;
   transition: all 200ms ease-in-out;
   overflow-y: auto;
 
-  @media (max-width: 375px) {
+  @media (max-width: ${rem(375)}) {
     width: 70vw;
   }
 `;
 
 const CartTitle = styled.h2`
-  font-family: Inter, Arial, sans-serif;
-  font-size: 2rem;
-  color: #1C2624;
-  margin-bottom: 3rem;
-  padding-bottom: 1rem;
+  font-family: var(--heading-f);
+  font-size: ${rem(32)};
+  margin-bottom: ${rem(48)};
+  padding-bottom: ${rem(16)};
   border-bottom: solid 1px #ddd;
 `;
 
@@ -32,8 +32,8 @@ const ShoppingList = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 3rem;
-  padding-bottom: 1.5rem;
+  margin-bottom: ${rem(48)};
+  padding-bottom: ${rem(24)};
   border-bottom: solid 1px #dddddd;
 `;
 
@@ -41,26 +41,23 @@ const CartItem = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: auto 2fr auto;
-  gap: 1rem;
-  margin-bottom: 1.75rem;
+  gap: ${rem(16)};
+  margin-bottom: ${rem(28)};
 
-  @media (max-width: 48rem) {
+  @media (max-width: ${rem(768)}) {
     grid-template-columns: 1fr;
-    gap: 0.8rem;
+    gap: ${rem(13)};
   }
 `;
 
 const CartItemTitle = styled.h3`
-  font-family: 'DM Sans', Arial, sans-serif;
-  font-size: 1.125rem;
-  color: #1C2624;
-  margin-bottom: 0.5rem;
+  font-size: ${rem(18)};
+  margin-bottom: ${rem(8)};
 `;
 
 const CartItemPrice = styled.h3`
-  font-family: 'DM Sans', Arial, Helvetica, sans-serif;
-  font-size: 1.25rem;
-  color: #CE9E63;
+  font-size: ${rem(20)};
+  color: var(--wheat);
 `;
 
 const CartItemInfo = styled.div`
@@ -69,19 +66,19 @@ const CartItemInfo = styled.div`
 
 const CartItemImg = styled.img`
   display: block;
-  width: 60px;
+  width: ${rem(60)};
   height: auto;
 
-  @media (max-width: 48rem){
+  @media (max-width: ${rem(768)}){
     display: none;
   }
 `;
 
 const CartItemDelete = styled.button`
   display: block;
-  padding: 0.75rem 1.5rem;
-  background-color: #C9082A;
-  color: white;
+  padding: ${rem(12)} ${rem(24)};
+  background-color: var(--red);
+  color: var(--white);
   border: none;
 
   &:hover {
@@ -90,35 +87,32 @@ const CartItemDelete = styled.button`
 `;
 
 const CartTotal = styled.div`
-  font-family: 'DM Sans', Arial, sans-serif;
-  font-size: 2rem;
+  font-size: ${rem(32)};
   font-weight: 700;
   text-align: right;
-  color: #1C2624;
-  margin: 0 0 3rem;
+  margin: 0 0 ${rem(48)};
   
   span {
     display: inline-block;
-    margin-left: 1rem;
-    font-size: 2.125rem;
-    color: #CE9E63;
+    margin-left: ${rem(16)};
+    font-size: ${rem(34)};
+    color: var(--wheat);
   }
 `;
 
 const CartCheckout = styled.button`
   display: block;
   width: 50%;
-  padding: 1rem;
+  padding: ${rem(16)};
   margin: auto;
-  font-family: 'DM Sans', Arial, sans-serif;
-  background-color: #7D7582;
-  color: white;
+  background-color: var(--purple);
+  color: var(--white);
 
   &:hover {
     opacity: 0.9;
   }
 
-  @media (max-width: 48rem) {
+  @media (max-width: ${rem(768)}) {
     width: 80%;
   }
 `;

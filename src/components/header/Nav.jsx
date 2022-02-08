@@ -14,30 +14,30 @@ const Navbar = styled.nav`
   margin: 0 auto ${rem(74)};
   padding: 0;
   
-  @media (min-width: ${rem(769)}) {
-    margin-bottom: ${rem(145)};
+  @media (min-width: ${rem(376)}) {
+    padding: ${rem(12)};
+    margin-bottom: ${rem(147)};
+    background-color: var(--white);
+    box-shadow: 0px ${rem(10)} ${rem(27)} -${rem(2)} rgba(0,0,0,0.1),
+                0px -${rem(10)} ${rem(27)} -${rem(2)} rgba(0,0,0,0.1) ;
   }
 
-  @media (min-width: ${rem(769)}) {
-    padding: ${rem(12)};
-    background-color: white;
-    box-shadow: 0px 10px 27px -2px rgba(0,0,0,0.1),
-                0px -10px 27px -2px rgba(0,0,0,0.1) ;
-    margin-bottom: ${rem(170)}
+  @media (min-width: ${rem(1025)}) {
+    margin-bottom: ${rem(168)};
   }
 `;
 
 const NavBtns = styled.div`
   display: flex;
   align-items: center;
-  column-gap: 1rem;
+  column-gap: ${rem(16)};
 `;
 
 const CartBtn = styled.button`
-  font-size: 1.75rem;
+  font-size: ${rem(28)};
   display: flex;
   align-items: center;
-  column-gap: 0.25rem;
+  column-gap: ${rem(4)};
   cursor: pointer;
   opacity: 0.8;
 
@@ -48,44 +48,44 @@ const CartBtn = styled.button`
 
 const CartBtnImg = styled.div`
   display: inline-block;
-  width: 2.125rem;
-  height: 1.875rem;
-  background-image: url(${blackCart});
+  width: ${rem(34)};
+  height: ${rem(30)};
+  background-image: url(${whiteCart});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 
-  @media (max-width: 48rem) {
-    background-image: url(${whiteCart});
+  @media (min-width: ${rem(376)}) {
+    background-image: url(${blackCart});
   }
 `;
 
 const CartContents = styled.span`
   display: block;
-  width: 1.375rem;
-  height: 1.375rem;
-  background-color: var(--red);
+  width: ${rem(22)};
+  height: ${rem(22)};
+  background-color: var(--white);
   border-radius: 50%;
-  font-size: 1rem;
-  color: white;
+  font-size: ${rem(16)};
+  color: var(--red);
 
-  @media (max-width: 48rem) {
-    background-color: white;
-    color: var(--red);
+  @media (min-width: ${rem(376)}) {
+    background-color: var(--red);
+    color: var(--white);
   }
 `;
 
 const Logo = styled.a`
   display: block;
-  width: 47px;
-  height: 47px;
-  background-image: url(${logo});
+  width: ${rem(47)};
+  height: ${rem(47)};
+  background-image: url(${logoMobile});
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
 
-  @media (max-width: 48rem) {
-    background-image: url(${logoMobile});
+  @media (min-width: ${rem(376)}) {
+    background-image: url(${logo});
   }
 `;
 

@@ -16,7 +16,7 @@ export default function Footer() {
       <FooterFlex>
         <Legal />
         <Social />
-        <Copyright>&copy; All rights reserved, OGB 2022</Copyright>
+        <Copyright>&copy; OGB &mdash; 2022</Copyright>
       </FooterFlex>
     </FooterContainer>
   )

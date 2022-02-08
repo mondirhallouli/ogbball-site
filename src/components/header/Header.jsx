@@ -1,33 +1,35 @@
 import styled from 'styled-components'
 import Nav from "./Nav"
-import Container from "../Container"
 import { HeaderTitle, HeaderSubtitle } from '../Typography'
-import { HeaderCtaWrapper } from '../Layout'
+import { HeaderCtaWrapper, Container } from '../Layout'
 import { CtaBtn } from '../Buttons'
 import headerBgImgDt from "../../assets/header-bg-desktop.svg"
 import headerBgImgTb from "../../assets/header-bg-tablet.svg"
 import headerBgImgMb from "../../assets/header-bg-mobile.svg"
+import rem from '../Utils'
 
 const HeaderWrapper = styled.header`
-  padding: 1rem 2.25rem 14.875rem;
-  margin: 0 auto 6.25rem;
-  background-image: url(${headerBgImgDt});
+  height: ${rem(666.5)};
+  padding: ${rem(48)} ${rem(36)} ${rem(100)};
+  margin: 0 auto ${rem(100)};
+  background-image: url(${headerBgImgMb});
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
   z-index: 1;
 
-  @media (max-width: 48rem) {
+  @media (min-width: ${rem(376)}) {
+    height: ${rem(804)};
     background-image: url(${headerBgImgTb});
-    padding-top: 2.5rem;
-    padding-bottom: 16.875rem;
+    padding-top: ${rem(40)};
+    padding-bottom: ${rem(270)};
   }
 
-  @media (max-width: 23.4375rem) {
-    background-image: url(${headerBgImgMb});
-    padding-top: 3rem;
-    padding-bottom: 6.25rem;
+  @media (min-width: ${rem(1025)}) {
+    height: ${rem(720)};
+    padding: ${rem(16)} ${rem(36)} ${rem(238)};
+    background-image: url(${headerBgImgDt});
   }
 `;
 

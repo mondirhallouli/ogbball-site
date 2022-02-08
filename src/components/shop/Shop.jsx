@@ -1,5 +1,4 @@
-import Container from '../Container';
-import { ShopItemWrapper, ShopItemCard, ShopItemImg, ShopWrapper } from '../Layout';
+import { Container, ShopItemWrapper, ShopItemCard, ShopItemImg, ShopWrapper } from '../Layout';
 import { SectionTitle, ShopCardPrice, ShopCardTitle } from '../Typography';
 import { ShopCardBtn } from '../Buttons';
 import blackHoodie from '../../assets/images/black-hoodie.png';

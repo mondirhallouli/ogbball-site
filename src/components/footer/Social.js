@@ -23,16 +23,20 @@ const SocialLink = styled.a`
     width: 100%;
     height: auto;
   }
+
+  &:hover {
+    opacity: 0.8;
+  }
 `;
 
 export default function Social() {
   return (
     <SocialWrapper>
       <SocialLink>
-        <img src={instagram} />
+        <img src={instagram} alt='instagram' />
       </SocialLink>
       <SocialLink>
-        <img src={youtube} />
+        <img src={youtube} alt='youtube' />
       </SocialLink>
     </SocialWrapper>
   )
