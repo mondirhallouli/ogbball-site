@@ -1,44 +1,34 @@
 import { Container, ShopItemWrapper, ShopItemCard, ShopItemImg, ShopWrapper } from '../Layout';
 import { SectionTitle, ShopCardPrice, ShopCardTitle } from '../Typography';
 import { ShopCardBtn } from '../Buttons';
-import blackHoodie from '../../assets/images/black-hoodie.png';
-import whiteHoodie from '../../assets/images/white-hoodie.png';
-import tshirt from '../../assets/images/t-shirt.png';
-import tanktop from '../../assets/images/tanktop.png';
+import { useSelector, useDispatch } from 'react-redux';
+import { addToCart } from '../../state/cart/shopSlice';
 
 export default function Shop() {
+
+  const products = useSelector(state => state.shop.products);
+  const dispatch = useDispatch();
+
+  const handleAddToCart = product => {
+    dispatch(addToCart({ img: product.img, title: product.title, price: product.price }));
+  }
+
   return (
     <ShopWrapper>
       <Container>
         <SectionTitle>latest merch</SectionTitle>
         <ShopItemWrapper>
-          <ShopItemCard>
-            <ShopItemImg src={blackHoodie} />
-            <ShopCardTitle>Black OG Bball hoodie</ShopCardTitle>
-            <ShopCardPrice>{`$${29.99}`}</ShopCardPrice>
-            <ShopCardBtn>add to cart</ShopCardBtn>
-          </ShopItemCard>
-
-          <ShopItemCard>
-            <ShopItemImg src={whiteHoodie} />
-            <ShopCardTitle>White OG Bball hoodie</ShopCardTitle>
-            <ShopCardPrice>{`$${29.99}`}</ShopCardPrice>
-            <ShopCardBtn>add to cart</ShopCardBtn>
-          </ShopItemCard>
-
-          <ShopItemCard>
-            <ShopItemImg src={tshirt} />
-            <ShopCardTitle>White OG Bball t-shirt</ShopCardTitle>
-            <ShopCardPrice>{`$${20.99}`}</ShopCardPrice>
-            <ShopCardBtn>add to cart</ShopCardBtn>
-          </ShopItemCard>
-
-          <ShopItemCard>
-            <ShopItemImg src={tanktop} />
-            <ShopCardTitle>White OG Bball tanktop</ShopCardTitle>
-            <ShopCardPrice>{`$${20.99}`}</ShopCardPrice>
-            <ShopCardBtn>add to cart</ShopCardBtn>
-          </ShopItemCard>
+          {!products && <p>Error! Can't fetch products.</p>}
+          {
+            products.map(product => (
+              <ShopItemCard key={product.id}>
+                <ShopItemImg src={product.img} />
+                <ShopCardTitle>{product.title}</ShopCardTitle>
+                <ShopCardPrice>{`$${product.price}`}</ShopCardPrice>
+                <ShopCardBtn onClick={() => handleAddToCart(product)}>add to cart</ShopCardBtn>
+              </ShopItemCard>
+            ))
+          }
         </ShopItemWrapper>
       </Container>
     </ShopWrapper>
