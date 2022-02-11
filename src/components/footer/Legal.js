@@ -22,6 +22,8 @@ const LegalWrapper = styled.div`
 const LegalLinks = styled.a`
   display: block;
   color: var(--white);
+  cursor: pointer;
+  
   &:hover {
     opacity: 0.8;
   }

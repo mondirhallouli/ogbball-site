@@ -18,6 +18,7 @@ const SocialLink = styled.a`
   display: block;
   width: ${rem(34)};
   height: ${rem(34)};
+  cursor: pointer;
 
   img {
     width: 100%;
