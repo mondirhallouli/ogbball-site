@@ -1,5 +1,6 @@
+import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components'
-import cartItemImg from '../../assets/images/black-hoodie.png'
+import { removeFromCart } from '../../state/cart/shopSlice';
 import rem from '../Utils'
 
 const CartBox = styled.div`
@@ -118,30 +119,36 @@ const CartCheckout = styled.button`
 `;
 
 const Cart = ({ cartOpen }) => {
+
+  const cart = useSelector(state => state.shop.cart.items);
+  const cartTotal = useSelector(state => state.shop.cart.total);
+  const dispatch = useDispatch();
+
+  const handleDelFromCart = itemId => {
+    dispatch(removeFromCart({ id: itemId }));
+  };
+
   return (
     <CartBox cartOpen={cartOpen}>
       <CartTitle>Shopping Cart</CartTitle>
       <ShoppingList>
-        <CartItem>
-          <CartItemImg src={cartItemImg} />
-          <CartItemInfo>
-            <CartItemTitle>Black OG Bball hoodie</CartItemTitle>
-            <CartItemPrice>{`$${9.99}`}</CartItemPrice>
-          </CartItemInfo>
-          <CartItemDelete>Remove</CartItemDelete>
-        </CartItem>
-        <CartItem>
-          <CartItemImg src={cartItemImg} />
-          <CartItemInfo>
-            <CartItemTitle>Black OG Bball hoodie</CartItemTitle>
-            <CartItemPrice>{`$${9.99}`}</CartItemPrice>
-          </CartItemInfo>
-          <CartItemDelete>Remove</CartItemDelete>
-        </CartItem>
+        {
+          cart.map(item => (
+            <CartItem key={item.id}>
+              <CartItemImg src={item.img} />
+              <CartItemInfo>
+                <CartItemTitle>{item.title}</CartItemTitle>
+                <CartItemPrice>{`$${item.price}`}</CartItemPrice>
+              </CartItemInfo>
+              <CartItemDelete onClick={() => handleDelFromCart(item.id)}>Remove</CartItemDelete>
+            </CartItem>
+          ))
+        }
       </ShoppingList>
+
       <CartTotal>
         Total:
-        <span>{`$${9.99}`}</span>
+        <span>{`$${cartTotal}`}</span>
       </CartTotal>
       <CartCheckout>Checkout Now</CartCheckout>
     </CartBox>

@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import MenuBtn from './MenuBtn'
 import MenuBtnWrapper from './MenuBtnWrapper'
 import rem from '../Utils'
+import { useSelector } from 'react-redux'
 
 const Navbar = styled.nav`
   display: flex;
@@ -91,6 +92,9 @@ const Logo = styled.a`
 
 const Nav = ({ open, toggleMenu, toggleCart }) => {
 
+  const cart = useSelector(state => state.shop.cart.items);
+  let cartItemCount = cart.length;
+
   return (
     <Navbar>
       <Logo />
@@ -98,7 +102,7 @@ const Nav = ({ open, toggleMenu, toggleCart }) => {
       <NavBtns>
         <CartBtn onClick={toggleCart}>
           <CartBtnImg />
-          <CartContents>{0}</CartContents>
+          <CartContents>{cartItemCount}</CartContents>
         </CartBtn>
 
         <MenuBtn onClick={toggleMenu} open={open}>
