@@ -15,7 +15,7 @@ const MenuBtn = styled.div`
     position: absolute;
     height: 6px;
     width: 100%;
-    background: var(--white);
+    background: var(--wheat);
     opacity: 1;
     left: 0;
     transform: rotate(0deg);
@@ -38,12 +38,6 @@ const MenuBtn = styled.div`
     transform-origin: left center;
     width: ${(props) => (props.open ? 0 : null)};
     opacity: ${(props) => (props.open ? 0 : 1)};
-  }
-
-  @media (min-width: ${rem(376)}) {
-    span {
-      background-color: var(--wheat);
-    }
   }
 `;
 

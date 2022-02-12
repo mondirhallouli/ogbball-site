@@ -19,7 +19,7 @@ export const SectionTitle = styled.h2`
 // HEADER SECTION TEXT COMPONENTS
 export const HeaderTitle = styled.h1`
   font-size: ${rem(36)};
-  margin: 0 auto ${rem(24)};
+  margin: ${({ stick }) => stick ? rem(145) : '0'} auto ${rem(24)};
   font-family: var(--heading-f);
   font-weight: 700;
   text-align: center;
@@ -27,6 +27,7 @@ export const HeaderTitle = styled.h1`
 
   @media (min-width: ${rem(376)}) {
     max-width: ${rem(500)};
+    margin-top: ${({ stick }) => stick ? rem(239) : '0'};
     font-size: ${rem(48)};
   }
 
