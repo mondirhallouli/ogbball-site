@@ -1,10 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
-import styled from 'styled-components'
+import styled from 'styled-components';
 import { removeFromCart } from '../../state/cart/shopSlice';
-import rem from '../Utils'
+import rem from '../Utils';
+import closeIcon from '../../assets/close.svg';
+import deleteIcon from '../../assets/delete-cart-item.svg';
 
 const CartBox = styled.div`
-  width: 50vw;
+  width: 80vw;
   height: 100vh;
   padding: ${rem(32)};
   background-color: white;
@@ -16,17 +18,25 @@ const CartBox = styled.div`
   transition: all 200ms ease-in-out;
   overflow-y: auto;
 
-  @media (max-width: ${rem(375)}) {
+  @media (min-width: ${rem(376)}) {
+    width: 80vw;
+  }
+  
+  @media (min-width: ${rem(769)}) {
     width: 70vw;
   }
 `;
 
 const CartTitle = styled.h2`
   font-family: var(--heading-f);
-  font-size: ${rem(32)};
+  font-size: ${rem(24)};
   margin-bottom: ${rem(48)};
   padding-bottom: ${rem(16)};
   border-bottom: solid 1px #ddd;
+
+  @media (min-width: ${rem(769)}) {
+    font-size: ${rem(32)};
+  }
 `;
 
 const ShoppingList = styled.div`
@@ -56,6 +66,17 @@ const CartItemTitle = styled.h3`
   margin-bottom: ${rem(8)};
 `;
 
+const CartCloseBtn = styled.button`
+  display: block;
+  width: ${rem(40)};
+  height: ${rem(40)};
+  background-image: url(${closeIcon});
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 0 ${rem(30)} calc(100% - ${rem(32)});
+  position: relative;
+`;
+
 const CartItemPrice = styled.h3`
   font-size: ${rem(20)};
   color: var(--wheat);
@@ -77,10 +98,15 @@ const CartItemImg = styled.img`
 
 const CartItemDelete = styled.button`
   display: block;
+  width: ${rem(50)};
+  height: ${rem(50)};
   padding: ${rem(12)} ${rem(24)};
+  background-image: url(${deleteIcon});
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center;
   background-color: var(--red);
-  color: var(--white);
-  border: none;
+  border-radius: 50%;
 
   &:hover {
     opacity: 0.8;
@@ -118,7 +144,7 @@ const CartCheckout = styled.button`
   }
 `;
 
-const Cart = ({ cartOpen }) => {
+const Cart = ({ cartOpen, toggleCart }) => {
 
   const cart = useSelector(state => state.shop.cart.items);
   const cartTotal = useSelector(state => state.shop.cart.total);
@@ -130,6 +156,7 @@ const Cart = ({ cartOpen }) => {
 
   return (
     <CartBox cartOpen={cartOpen}>
+      <CartCloseBtn onClick={toggleCart} />
       <CartTitle>Shopping Cart</CartTitle>
       <ShoppingList>
         {
@@ -140,7 +167,7 @@ const Cart = ({ cartOpen }) => {
                 <CartItemTitle>{item.title}</CartItemTitle>
                 <CartItemPrice>{`$${item.price}`}</CartItemPrice>
               </CartItemInfo>
-              <CartItemDelete onClick={() => handleDelFromCart(item.id)}>Remove</CartItemDelete>
+              <CartItemDelete onClick={() => handleDelFromCart(item.id)} />
             </CartItem>
           ))
         }
@@ -148,7 +175,7 @@ const Cart = ({ cartOpen }) => {
 
       <CartTotal>
         Total:
-        <span>{`$${cartTotal}`}</span>
+        <span>{`$${Number(cartTotal.toFixed(2))}`}</span>
       </CartTotal>
       <CartCheckout>Checkout Now</CartCheckout>
     </CartBox>
