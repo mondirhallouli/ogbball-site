@@ -26,7 +26,9 @@ const shopSlice = createSlice({
       state.cart.total += cartItem.price;
     },
     removeFromCart(state, action) {
-      state.cart.items.filter(item => item.id !== action.payload.id);
+      const index = state.cart.items.findIndex(item => item.id === action.payload.id);
+      state.cart.total -= state.cart.items[index].price;
+      state.cart.items.splice(index, 1);
     }
   }
 });

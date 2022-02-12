@@ -22,7 +22,7 @@ const App = () => {
     <div>
       <Header open={open} toggleMenu={toggleMenu} toggleCart={toggleCart} />
       <MobileMenu open={open} />
-      <Cart cartOpen={cartOpen} />
+      <Cart cartOpen={cartOpen} toggleCart={toggleCart} />
       <Shop />
       <Coaching />
       <Youtube />
