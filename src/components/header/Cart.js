@@ -13,7 +13,7 @@ import {
   CartItemDelete,
   CartTotal,
   CartCheckout
-} from '../Layout';
+} from './Components';
 
 
 const Cart = ({ cartOpen, toggleCart }) => {
