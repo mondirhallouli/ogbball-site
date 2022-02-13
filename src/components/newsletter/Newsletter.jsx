@@ -1,4 +1,5 @@
-import { Container, NLBtn, NLForm, NLInput, NLWrapper } from "../Layout";
+import { Container } from "../Layout";
+import { NLBtn, NLForm, NLInput, NLWrapper } from "./Components";
 import { NLdesc, SectionTitle } from "../Typography";
 
 export default function Newsletter() {

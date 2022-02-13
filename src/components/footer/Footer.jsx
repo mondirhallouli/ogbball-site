@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { FooterFlex } from '../Layout';
+import { FooterFlex } from './Components';
 import { Copyright } from '../Typography';
 import rem from '../Utils';
 import Legal from './Legal';

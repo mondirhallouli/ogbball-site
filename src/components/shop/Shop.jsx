@@ -1,4 +1,5 @@
-import { Container, ShopItemWrapper, ShopItemCard, ShopItemImg, ShopWrapper } from '../Layout';
+import { Container } from '../Layout';
+import { ShopItemWrapper, ShopItemCard, ShopItemImg, ShopWrapper } from './Components';
 import { SectionTitle, ShopCardPrice, ShopCardTitle } from '../Typography';
 import { ShopCardBtn } from '../Buttons';
 import { useSelector, useDispatch } from 'react-redux';

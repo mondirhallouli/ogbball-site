@@ -1,5 +1,5 @@
 import { CoachingCta } from '../Buttons';
-import { CoachingSection, CoachingContent } from '../Layout';
+import { CoachingSection, CoachingContent } from './Components';
 import { CoachingDesc, SectionTitle } from '../Typography';
 
 export default function Coaching() {

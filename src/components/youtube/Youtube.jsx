@@ -1,6 +1,6 @@
 import { SectionTitle } from "../Typography";
 import YoutubeEmbed from "./Youtube-embed";
-import { YtContent, YtWrapper } from "../Layout";
+import { YtContent, YtWrapper } from "./Components";
 
 export default function Youtube() {
   return (
