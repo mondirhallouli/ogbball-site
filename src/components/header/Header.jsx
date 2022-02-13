@@ -1,6 +1,7 @@
 import Nav from "./Nav"
 import { HeaderTitle, HeaderSubtitle } from '../Typography'
-import { HeaderWrapper, HeaderCtaWrapper, Container } from '../Layout'
+import { Container } from '../Layout'
+import { HeaderWrapper, HeaderCtaWrapper } from './Components'
 import { CtaBtn } from '../Buttons'
 import { useState } from "react"
 

@@ -8,7 +8,7 @@ import {
   CartBtn,
   CartBtnImg,
   CartContents
-} from '../Layout';
+} from './Components';
 
 
 
